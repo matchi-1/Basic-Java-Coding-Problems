@@ -40,11 +40,11 @@ At most 2 * 105 calls will be made to insert, remove, and getRandom.
 There will be at least one element in the data structure when getRandom is called.
 */
 
-class RandomizedSet {
+class InsertRemoveGetRandom {
     ArrayList<Integer> list;
     HashMap<Integer, Integer> map;
 
-    public RandomizedSet() {
+    public InsertRemoveGetRandom() {
         list = new ArrayList<>();
         map = new HashMap<>();
     }

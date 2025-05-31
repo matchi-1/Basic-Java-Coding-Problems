@@ -14,6 +14,7 @@ public class QueryTeamFormation {
             HashMap<Integer, Integer> map = new HashMap<>();
             for(int j = l; j < r; j++){
                 map.put(l, map.getOrDefault(l, 0) + 1);
+
             }
 
             int countTeams = 0;

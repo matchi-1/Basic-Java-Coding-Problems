@@ -8,7 +8,6 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
 
-
 Example 1:
 
 Input: prices = [7,1,5,3,6,4]
@@ -22,18 +21,26 @@ Output: 0
 Explanation: In this case, no transactions are done and the max profit = 0.
 */
 
+
+import java.util.ArrayList;
+
 public class BuySellStock {
 
-    public int maxProfit(int[] prices) {
-        int profit = 0, buyPrice = prices[0];
-        for (int i = 1; i < prices.length; i++){
-            if (buyPrice > prices[i])
+    public static int maxProfit(int[] prices) {
+        int buyPrice = prices[0], profit = 0;
+        for(int i = 1; i < prices.length; i++){
+            if (prices[i] < buyPrice) {
                 buyPrice = prices[i];
-            else
-            if ((prices[i] - buyPrice) > profit)
+            } else if ((prices[i] - buyPrice) > profit){
                 profit = prices[i] - buyPrice;
+            }
         }
         return profit;
+    }
+
+    public static void main(String[] args) {
+        int[] prices = {7,1,5,3,6,4};
+        System.out.println("Output: " + maxProfit(prices));
     }
 
 }
